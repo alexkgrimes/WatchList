@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6022E7912500B6A677 /* AppDelegate.swift */; };
-		FAA1EC6322E7912500B6A677 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* FirstViewController.swift */; };
-		FAA1EC6522E7912500B6A677 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SecondViewController.swift */; };
+		FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* HomeViewController.swift */; };
+		FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SearchViewController.swift */; };
 		FAA1EC6822E7912500B6A677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6622E7912500B6A677 /* Main.storyboard */; };
 		FAA1EC6A22E7912600B6A677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6922E7912600B6A677 /* Assets.xcassets */; };
 		FAA1EC6D22E7912600B6A677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6B22E7912600B6A677 /* LaunchScreen.storyboard */; };
 		FAA1EC7822E7912600B6A677 /* WatchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC7722E7912600B6A677 /* WatchListTests.swift */; };
+		FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */; };
+		FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +31,8 @@
 /* Begin PBXFileReference section */
 		FAA1EC5D22E7912500B6A677 /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC6022E7912500B6A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAA1EC6222E7912500B6A677 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FAA1EC6422E7912500B6A677 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		FAA1EC6222E7912500B6A677 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FAA1EC6422E7912500B6A677 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FAA1EC6722E7912500B6A677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAA1EC6922E7912600B6A677 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA1EC6C22E7912600B6A677 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		FAA1EC7322E7912600B6A677 /* WatchListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC7722E7912600B6A677 /* WatchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTests.swift; sourceTree = "<group>"; };
 		FAA1EC7922E7912600B6A677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +83,8 @@
 		FAA1EC5F22E7912500B6A677 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				FAA2F7DE22E8EA0100109B96 /* View Controllers */,
 				FAA1EC6022E7912500B6A677 /* AppDelegate.swift */,
-				FAA1EC6222E7912500B6A677 /* FirstViewController.swift */,
-				FAA1EC6422E7912500B6A677 /* SecondViewController.swift */,
 				FAA1EC6622E7912500B6A677 /* Main.storyboard */,
 				FAA1EC6922E7912600B6A677 /* Assets.xcassets */,
 				FAA1EC6B22E7912600B6A677 /* LaunchScreen.storyboard */,
@@ -97,6 +100,17 @@
 				FAA1EC7922E7912600B6A677 /* Info.plist */,
 			);
 			path = WatchListTests;
+			sourceTree = "<group>";
+		};
+		FAA2F7DE22E8EA0100109B96 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA1EC6222E7912500B6A677 /* HomeViewController.swift */,
+				FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */,
+				FAA1EC6422E7912500B6A677 /* SearchViewController.swift */,
+				FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA1EC6522E7912500B6A677 /* SecondViewController.swift in Sources */,
+				FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */,
+				FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
-				FAA1EC6322E7912500B6A677 /* FirstViewController.swift in Sources */,
+				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,
+				FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
