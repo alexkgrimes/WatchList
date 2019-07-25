@@ -14,6 +14,7 @@
 		FAA1EC6A22E7912600B6A677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6922E7912600B6A677 /* Assets.xcassets */; };
 		FAA1EC6D22E7912600B6A677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6B22E7912600B6A677 /* LaunchScreen.storyboard */; };
 		FAA1EC7822E7912600B6A677 /* WatchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC7722E7912600B6A677 /* WatchListTests.swift */; };
+		FAA2DCC422EA23DE004BE67E /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */; };
 		FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */; };
 		FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		FAA1EC7322E7912600B6A677 /* WatchListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC7722E7912600B6A677 /* WatchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTests.swift; sourceTree = "<group>"; };
 		FAA1EC7922E7912600B6A677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 		FAA1EC5F22E7912500B6A677 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */,
 				FAA2F7DE22E8EA0100109B96 /* View Controllers */,
 				FAA1EC6022E7912500B6A677 /* AppDelegate.swift */,
 				FAA1EC6622E7912500B6A677 /* Main.storyboard */,
@@ -218,6 +221,7 @@
 				FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
 				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,
+				FAA2DCC422EA23DE004BE67E /* CategoryRow.swift in Sources */,
 				FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
