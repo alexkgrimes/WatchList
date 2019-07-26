@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
     
     var categories = ["On Your Watch List", "Watch It Again", "Top Rated"]
+    let backgroundColor = UIColor(red: 32.0 / 255.0, green: 33.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
 
     
     override func viewDidLoad() {
@@ -50,10 +51,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        view.tintColor = backgroundColor
         let header = view as? UITableViewHeaderFooterView
         header?.textLabel?.font = UIFont(name: "System", size: 26)
         header?.textLabel?.textColor = UIColor.lightText
-        header?.backgroundColor = UIColor.black
     }
 }
 
