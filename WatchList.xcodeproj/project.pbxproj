@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A322F3359E00256021 /* ListDetailViewController.swift */; };
+		FA1659A822F37E4000256021 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A722F37E4000256021 /* MovieCell.swift */; };
+		FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A922F3859800256021 /* MovieDetailViewController.swift */; };
 		FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6022E7912500B6A677 /* AppDelegate.swift */; };
 		FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* HomeViewController.swift */; };
 		FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SearchViewController.swift */; };
@@ -15,6 +18,7 @@
 		FAA1EC6D22E7912600B6A677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA1EC6B22E7912600B6A677 /* LaunchScreen.storyboard */; };
 		FAA1EC7822E7912600B6A677 /* WatchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC7722E7912600B6A677 /* WatchListTests.swift */; };
 		FAA2DCC422EA23DE004BE67E /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */; };
+		FAA2DCCB22EB9ADC004BE67E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2DCCA22EB9ADC004BE67E /* TabBarViewController.swift */; };
 		FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */; };
 		FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA1659A322F3359E00256021 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListDetailViewController.swift; path = ../../ListDetailViewController.swift; sourceTree = "<group>"; };
+		FA1659A722F37E4000256021 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieCell.swift; path = ../MovieCell.swift; sourceTree = "<group>"; };
+		FA1659A922F3859800256021 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		FAA1EC5D22E7912500B6A677 /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC6022E7912500B6A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA1EC6222E7912500B6A677 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +49,7 @@
 		FAA1EC7722E7912600B6A677 /* WatchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTests.swift; sourceTree = "<group>"; };
 		FAA1EC7922E7912600B6A677 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		FAA2DCCA22EB9ADC004BE67E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +75,7 @@
 		FAA1EC5422E7912500B6A677 = {
 			isa = PBXGroup;
 			children = (
+				FAA2DCCA22EB9ADC004BE67E /* TabBarViewController.swift */,
 				FAA1EC5F22E7912500B6A677 /* WatchList */,
 				FAA1EC7622E7912600B6A677 /* WatchListTests */,
 				FAA1EC5E22E7912500B6A677 /* Products */,
@@ -85,6 +94,7 @@
 		FAA1EC5F22E7912500B6A677 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				FA1659A722F37E4000256021 /* MovieCell.swift */,
 				FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */,
 				FAA2F7DE22E8EA0100109B96 /* View Controllers */,
 				FAA1EC6022E7912500B6A677 /* AppDelegate.swift */,
@@ -108,6 +118,8 @@
 		FAA2F7DE22E8EA0100109B96 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA1659A922F3859800256021 /* MovieDetailViewController.swift */,
+				FA1659A322F3359E00256021 /* ListDetailViewController.swift */,
 				FAA1EC6222E7912500B6A677 /* HomeViewController.swift */,
 				FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */,
 				FAA1EC6422E7912500B6A677 /* SearchViewController.swift */,
@@ -219,10 +231,14 @@
 			files = (
 				FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */,
 				FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */,
+				FA1659A822F37E4000256021 /* MovieCell.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
 				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,
+				FAA2DCCB22EB9ADC004BE67E /* TabBarViewController.swift in Sources */,
+				FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */,
 				FAA2DCC422EA23DE004BE67E /* CategoryRow.swift in Sources */,
 				FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */,
+				FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
