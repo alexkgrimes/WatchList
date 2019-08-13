@@ -31,6 +31,12 @@ class ListDetailViewController: UIViewController {
         UINavigationBar.appearance().titleTextAttributes = textAttributes
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if let selectionIndexPath = self.listTableView.indexPathForSelectedRow {
+            self.listTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -52,6 +58,11 @@ extension ListDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell
         cell.movieName.text = movieList[indexPath.row]
+        
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = .darkGray
+        cell.selectedBackgroundView = bgColorView
+        
         return cell
     }
     

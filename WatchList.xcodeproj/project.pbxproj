@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA12ED5B22F4BBE200B92BD1 /* ListLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12ED5A22F4BBE200B92BD1 /* ListLabelCell.swift */; };
 		FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A322F3359E00256021 /* ListDetailViewController.swift */; };
 		FA1659A822F37E4000256021 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A722F37E4000256021 /* MovieCell.swift */; };
 		FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A922F3859800256021 /* MovieDetailViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA12ED5A22F4BBE200B92BD1 /* ListLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLabelCell.swift; sourceTree = "<group>"; };
 		FA1659A322F3359E00256021 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListDetailViewController.swift; path = ../../ListDetailViewController.swift; sourceTree = "<group>"; };
 		FA1659A722F37E4000256021 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieCell.swift; path = ../MovieCell.swift; sourceTree = "<group>"; };
 		FA1659A922F3859800256021 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				FA1659A722F37E4000256021 /* MovieCell.swift */,
 				FAA2DCC322EA23DE004BE67E /* CategoryRow.swift */,
+				FA12ED5A22F4BBE200B92BD1 /* ListLabelCell.swift */,
 				FAA2F7DE22E8EA0100109B96 /* View Controllers */,
 				FAA1EC6022E7912500B6A677 /* AppDelegate.swift */,
 				FAA1EC6622E7912500B6A677 /* Main.storyboard */,
@@ -238,6 +241,7 @@
 				FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */,
 				FAA2DCC422EA23DE004BE67E /* CategoryRow.swift in Sources */,
 				FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */,
+				FA12ED5B22F4BBE200B92BD1 /* ListLabelCell.swift in Sources */,
 				FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

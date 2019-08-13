@@ -15,6 +15,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var listsTableView: UITableView!
     
     let lists = ["To Watch", "Favorites", "Background TV", "For Alex"]
+    let counts = [12, 20, 4, 8]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,13 @@ class ListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        if let selectionIndexPath = self.listsTableView.indexPathForSelectedRow {
+            self.listsTableView.deselectRow(at: selectionIndexPath, animated: true)
+        }
+        
         super.viewDidAppear(animated)
     }
+
 
 
     /*
@@ -55,11 +61,15 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
-        cell.textLabel?.text = lists[indexPath.row]
-        cell.textLabel?.textColor = UIColor.lightText
-        cell.backgroundColor = backgroundColor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listLabelCell", for: indexPath) as! ListLabelCell
+        cell.listName.text = lists[indexPath.row]
+        cell.extraInfoLabel.text = "\(counts[indexPath.row]) items"
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
