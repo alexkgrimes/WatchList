@@ -1,24 +1,22 @@
 //
-//  AccountViewController.swift
+//  SignupViewController.swift
 //  WatchList
 //
-//  Created by Alex Grimes on 7/24/19.
+//  Created by Alex Grimes on 8/15/19.
 //  Copyright © 2019 Alex Grimes. All rights reserved.
 //
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class SignupViewController: UIViewController {
 
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     
-    
-    @IBAction func logoutButtonTapped(_ sender: Any) {
-        guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
-        let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "WelcomeNavigation")
-        appDel.window?.rootViewController = rootController
-        Defaults.clearUserData()
+    @IBAction func signupButtonTapped(_ sender: Any) {
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
