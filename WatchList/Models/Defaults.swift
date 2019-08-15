@@ -10,7 +10,7 @@ import Foundation
 
 struct Defaults {
     
-    static let (nameKey, addressKey, passwordKey) = ("name", "address", "password")
+    static let (nameKey, emailKey) = ("name", "email")
     
     static func setName(_ name: String){
         UserDefaults.standard.set(name, forKey: nameKey)
@@ -22,7 +22,6 @@ struct Defaults {
     
     static func clearUserData() {
         UserDefaults.standard.removeObject(forKey: nameKey)
-        UserDefaults.standard.removeObject(forKey: passwordKey)
-        UserDefaults.standard.removeObject(forKey: addressKey)
+        UserDefaults.standard.removeObject(forKey: emailKey)
     }
 }

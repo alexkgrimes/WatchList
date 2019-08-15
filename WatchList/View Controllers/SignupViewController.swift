@@ -13,6 +13,8 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     @IBAction func signupButtonTapped(_ sender: Any) {
+        self.view.endEditing(true)
+        
         let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
         appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     }
@@ -22,6 +24,8 @@ class SignupViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+
     
 
     /*

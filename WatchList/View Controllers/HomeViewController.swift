@@ -22,6 +22,8 @@ class HomeViewController: UIViewController {
         
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        
+        self.view.endEditing(true)
     }
     
 
