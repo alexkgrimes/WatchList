@@ -39,6 +39,14 @@ class MovieDetailViewController: UIViewController {
         _ = navigationController?.popViewController(animated: false)
     }
     
+    @IBAction func addToListsButtonTapped(_ sender: Any) {
+        addToListsButton.imageView?.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+    }
+    
+    @IBAction func rateButtonTapped(_ sender: Any) {
+    }
+    @IBAction func shareButtonTapped(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print(sentData)
@@ -57,17 +65,27 @@ class MovieDetailViewController: UIViewController {
 
         descriptionLabel.text = "So this is probably going to be a pretty long description so I'm gonna want it to be able to wrap a few times and not get cut off or scroll or anything else funny like that. Great description lmao gottem. So this is probably going to be a pretty long description so I'm gonna want it to be able to wrap a few times and not get cut off or scroll or anything else funny like that. Great description lmao gottem."
         
-        addToListsButton.imageView?.image = addToListsButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        addToListsButton.imageView?.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
         
-        rateButton.imageView?.image = rateButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        rateButton.imageView?.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
-        
-        shareButton.imageView?.image = shareButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-        shareButton.imageView?.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
-    
+        colorButtons()
     }
     
+    func colorButtons() {
+        let addToListImage = UIImage(named: "add2")
+        let tintedImageAdd = addToListImage?.withRenderingMode(.alwaysTemplate)
+        addToListsButton.setImage(tintedImageAdd, for: .normal)
+        addToListsButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        
+        let starImage = UIImage(named: "star")
+        let tintedImageStar = starImage?.withRenderingMode(.alwaysTemplate)
+        rateButton.setImage(tintedImageStar, for: .normal)
+        rateButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        
+        let shareImage = UIImage(named: "share")
+        let tintedImageShare = shareImage?.withRenderingMode(.alwaysTemplate)
+        shareButton.setImage(tintedImageShare, for: .normal)
+        shareButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+    }
+ 
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewWillDisappear(animated)
@@ -77,13 +95,7 @@ class MovieDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidAppear(animated)
     }
-    
-    override func viewDidLayoutSubviews() {
-        //scrollView.addSubview(contentView)//if the contentView is not already inside your scrollview in your xib/StoryBoard doc
-        
-        // contentView.contentSize = contentView.frame.size //sets ScrollView content size
-    }
-    
+
 
     /*
     // MARK: - Navigation

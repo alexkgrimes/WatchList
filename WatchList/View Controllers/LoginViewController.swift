@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        handleLoginTapped()
+    }
+    
+    func handleLoginTapped() {
         Defaults.setName("alexkgrimes")
         let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
         appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
@@ -30,6 +34,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.usernameTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //textField code
+        
+        //textField.resignFirstResponder()  //if desired
+        handleLoginTapped()
+        return true
     }
     
 

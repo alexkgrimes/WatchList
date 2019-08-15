@@ -8,15 +8,12 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var signupButton: UIButton!
     
     @IBAction func signupButtonTapped(_ sender: Any) {
-        self.view.endEditing(true)
-        
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        handleSignupTapped()
     }
     
     override func viewDidLoad() {
@@ -25,8 +22,21 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    func handleSignupTapped() {
+        self.view.endEditing(true)
+        
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //textField code
+        
+        //textField.resignFirstResponder()  //if desired
+        handleSignupTapped()
+        return true
+    }
 
     /*
     // MARK: - Navigation
