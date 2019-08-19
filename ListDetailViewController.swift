@@ -16,7 +16,6 @@ class ListDetailViewController: UIViewController {
     let backgroundColor = UIColor(red: 32.0 / 255.0, green: 33.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
     let movieList = ["Avengers", "Spiderman", "Toy Story 4"]
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,20 +35,9 @@ class ListDetailViewController: UIViewController {
             self.listTableView.deselectRow(at: selectionIndexPath, animated: true)
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// MARK: - TableViewDelegate
 extension ListDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieList.count
@@ -83,6 +71,5 @@ extension ListDetailViewController: UITableViewDataSource, UITableViewDelegate {
         self.navigationController!.view.layer.add(transition, forKey: nil)
         
         self.navigationController?.pushViewController(movieDetailViewController, animated: false)
-        
     }
 }

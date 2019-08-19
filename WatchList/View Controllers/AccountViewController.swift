@@ -12,7 +12,6 @@ class AccountViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     
-    
     @IBAction func logoutButtonTapped(_ sender: Any) {
         guard let appDel = UIApplication.shared.delegate as? AppDelegate else { return }
         let rootController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "WelcomeNavigation")
@@ -24,16 +23,4 @@ class AccountViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

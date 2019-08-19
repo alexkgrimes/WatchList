@@ -11,6 +11,7 @@
 		FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A322F3359E00256021 /* ListDetailViewController.swift */; };
 		FA1659A822F37E4000256021 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A722F37E4000256021 /* MovieCell.swift */; };
 		FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A922F3859800256021 /* MovieDetailViewController.swift */; };
+		FA593C7B230B23C40034861D /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7A230B23C40034861D /* AddMovieViewController.swift */; };
 		FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6022E7912500B6A677 /* AppDelegate.swift */; };
 		FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* HomeViewController.swift */; };
 		FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SearchViewController.swift */; };
@@ -24,6 +25,7 @@
 		FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */; };
 		FAAD075123049AC200CCE0B3 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD075023049AC200CCE0B3 /* Defaults.swift */; };
 		FAB8CEE52303611700E994CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8CEE42303611700E994CA /* LoginViewController.swift */; };
+		FAC17F682307219500C0775A /* AddListModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC17F672307219500C0775A /* AddListModuleViewController.swift */; };
 		FACF8ED32305A8F600A49718 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF8ED22305A8F600A49718 /* SignupViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,7 @@
 		FA1659A322F3359E00256021 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListDetailViewController.swift; path = ../../ListDetailViewController.swift; sourceTree = "<group>"; };
 		FA1659A722F37E4000256021 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieCell.swift; path = ../MovieCell.swift; sourceTree = "<group>"; };
 		FA1659A922F3859800256021 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		FA593C7A230B23C40034861D /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		FAA1EC5D22E7912500B6A677 /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC6022E7912500B6A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA1EC6222E7912500B6A677 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FAAD075023049AC200CCE0B3 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		FAB8CEE42303611700E994CA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAC17F672307219500C0775A /* AddListModuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListModuleViewController.swift; sourceTree = "<group>"; };
 		FACF8ED22305A8F600A49718 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1659A922F3859800256021 /* MovieDetailViewController.swift */,
+				FA593C7A230B23C40034861D /* AddMovieViewController.swift */,
 				FA1659A322F3359E00256021 /* ListDetailViewController.swift */,
 				FAA1EC6222E7912500B6A677 /* HomeViewController.swift */,
 				FAA2F7DC22E8E9FB00109B96 /* AccountViewController.swift */,
@@ -136,6 +141,7 @@
 				FAA1EC6422E7912500B6A677 /* SearchViewController.swift */,
 				FAA2F7DA22E8E7D800109B96 /* ListViewController.swift */,
 				FAB8CEE42303611700E994CA /* LoginViewController.swift */,
+				FAC17F672307219500C0775A /* AddListModuleViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				FA1659A822F37E4000256021 /* MovieCell.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
 				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,
+				FAC17F682307219500C0775A /* AddListModuleViewController.swift in Sources */,
 				FAA2DCCB22EB9ADC004BE67E /* TabBarViewController.swift in Sources */,
 				FACF8ED32305A8F600A49718 /* SignupViewController.swift in Sources */,
 				FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */,
@@ -263,6 +270,7 @@
 				FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */,
 				FA12ED5B22F4BBE200B92BD1 /* ListLabelCell.swift in Sources */,
 				FA1659A422F3359E00256021 /* ListDetailViewController.swift in Sources */,
+				FA593C7B230B23C40034861D /* AddMovieViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

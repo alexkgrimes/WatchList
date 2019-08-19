@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.delegate = self
@@ -27,12 +28,14 @@ class SearchViewController: UIViewController {
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.barTintColor = backgroundColor
         
+        searchController.searchBar.keyboardAppearance = .dark
+        searchController.searchBar.becomeFirstResponder()
+        
         tableView.tableHeaderView = searchController.searchBar
     }
-
-
 }
 
+// MARK: - SearchBarDelegate
 extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
@@ -45,9 +48,12 @@ extension SearchViewController: UISearchBarDelegate, UISearchResultsUpdating {
         tableView.reloadData()
     }
     
-
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.resignFirstResponder()
+    }
 }
 
+// MARK: - TableViewDelegate
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieNames.count
@@ -60,7 +66,5 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = backgroundColor
         return cell
     }
-    
-    
 }
 

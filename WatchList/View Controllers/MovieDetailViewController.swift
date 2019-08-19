@@ -16,7 +16,6 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var moviePosterImageView: UIImageView!
     @IBOutlet weak var detailsStackView: UIStackView!
     
-    
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var runtimeLabel: UILabel!
@@ -40,22 +39,23 @@ class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func addToListsButtonTapped(_ sender: Any) {
-        addToListsButton.imageView?.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        // addToListsButton.imageView?.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
+        
     }
     
     @IBAction func rateButtonTapped(_ sender: Any) {
+        // TODO
     }
+    
     @IBAction func shareButtonTapped(_ sender: Any) {
+        // TODO
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(sentData)
 
         // Do any additional setup after loading the view.
-        //scrollView.delegate = self as? UIScrollViewDelegate
-        
-        
-        
         moviePosterImageView.image = UIImage(named: "Image-1")
         yearLabel.text = "2019"
         ratingLabel.text = "PG"
@@ -64,8 +64,7 @@ class MovieDetailViewController: UIViewController {
         whereToWatchButton.layer.cornerRadius = 5
 
         descriptionLabel.text = "So this is probably going to be a pretty long description so I'm gonna want it to be able to wrap a few times and not get cut off or scroll or anything else funny like that. Great description lmao gottem. So this is probably going to be a pretty long description so I'm gonna want it to be able to wrap a few times and not get cut off or scroll or anything else funny like that. Great description lmao gottem."
-        
-        
+
         colorButtons()
     }
     
@@ -73,17 +72,17 @@ class MovieDetailViewController: UIViewController {
         let addToListImage = UIImage(named: "add2")
         let tintedImageAdd = addToListImage?.withRenderingMode(.alwaysTemplate)
         addToListsButton.setImage(tintedImageAdd, for: .normal)
-        addToListsButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        addToListsButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
         
         let starImage = UIImage(named: "star")
         let tintedImageStar = starImage?.withRenderingMode(.alwaysTemplate)
         rateButton.setImage(tintedImageStar, for: .normal)
-        rateButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        rateButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
         
         let shareImage = UIImage(named: "share")
         let tintedImageShare = shareImage?.withRenderingMode(.alwaysTemplate)
         shareButton.setImage(tintedImageShare, for: .normal)
-        shareButton.tintColor = #colorLiteral(red: 0.5378742814, green: 0.9064556956, blue: 1, alpha: 1)
+        shareButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
     }
  
     override func viewWillDisappear(_ animated: Bool) {
@@ -95,16 +94,7 @@ class MovieDetailViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidAppear(animated)
     }
-
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
