@@ -727,7 +727,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="pfh-13-cQn"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1052,32 +1052,93 @@
         <scene sceneID="54a-7x-Bja">
             <objects>
                 <viewController id="QCy-Hr-gdc" customClass="AddMovieViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
-                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="fOW-fH-YG0">
+                    <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="QSL-lP-qyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bGd-Xb-uUh">
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SqQ-cH-o6w">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-Zr-MCP">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="xe1-7P-yc7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
-                                    <vibrancyEffect>
-                                        <blurEffect style="light"/>
-                                    </vibrancyEffect>
-                                </visualEffectView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dB-WX-hae">
+                                    <rect key="frame" x="52" y="129" width="310" height="280"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select list:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTe-46-aZ8">
+                                            <rect key="frame" x="24" y="24" width="278" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="Qcn-T3-Rs5"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2M-CC-zAZ">
+                                            <rect key="frame" x="0.0" y="60" width="310" height="142"/>
+                                        </pickerView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiP-0B-NA5">
+                                            <rect key="frame" x="24" y="226" width="123" height="30"/>
+                                            <color key="backgroundColor" red="0.40031603110000002" green="0.47677519149999997" blue="0.56804566059999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="7wQ-dR-aB7"/>
+                                            </constraints>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelButtonTapped:" destination="QCy-Hr-gdc" eventType="touchUpInside" id="M4q-Uh-oTD"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKd-ZM-50Z">
+                                            <rect key="frame" x="163" y="226" width="123" height="30"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="vl4-w5-lyN"/>
+                                            </constraints>
+                                            <state key="normal" title="OK">
+                                                <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="okButtonTapped:" destination="QCy-Hr-gdc" eventType="touchUpInside" id="u1x-nf-rRu"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.70472509309999998" green="0.83932547079999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstItem="pTe-46-aZ8" firstAttribute="leading" secondItem="3dB-WX-hae" secondAttribute="leading" constant="24" id="1Wb-pg-8uh"/>
+                                        <constraint firstItem="eKd-ZM-50Z" firstAttribute="width" secondItem="wiP-0B-NA5" secondAttribute="width" id="4P9-4r-YsS"/>
+                                        <constraint firstItem="eKd-ZM-50Z" firstAttribute="leading" secondItem="wiP-0B-NA5" secondAttribute="trailing" constant="16" id="5gq-bN-sM4"/>
+                                        <constraint firstAttribute="trailing" secondItem="eKd-ZM-50Z" secondAttribute="trailing" constant="24" id="95E-on-31W"/>
+                                        <constraint firstAttribute="height" constant="280" id="PEU-zi-Roo"/>
+                                        <constraint firstAttribute="bottom" secondItem="eKd-ZM-50Z" secondAttribute="bottom" constant="24" id="Vto-5O-Xfq"/>
+                                        <constraint firstAttribute="bottom" secondItem="wiP-0B-NA5" secondAttribute="bottom" constant="24" id="a7d-UO-fWk"/>
+                                        <constraint firstItem="wiP-0B-NA5" firstAttribute="leading" secondItem="3dB-WX-hae" secondAttribute="leading" constant="24" id="bOj-cr-ilC"/>
+                                        <constraint firstAttribute="trailing" secondItem="pTe-46-aZ8" secondAttribute="trailing" constant="8" id="dcV-1V-eJE"/>
+                                        <constraint firstAttribute="trailing" secondItem="p2M-CC-zAZ" secondAttribute="trailing" id="i7L-YS-dEr"/>
+                                        <constraint firstItem="pTe-46-aZ8" firstAttribute="top" secondItem="3dB-WX-hae" secondAttribute="top" constant="24" id="lke-Mu-FBF"/>
+                                        <constraint firstItem="p2M-CC-zAZ" firstAttribute="top" secondItem="pTe-46-aZ8" secondAttribute="bottom" constant="8" id="mHx-59-kX6"/>
+                                        <constraint firstItem="p2M-CC-zAZ" firstAttribute="leading" secondItem="3dB-WX-hae" secondAttribute="leading" id="uY3-Fg-a7e"/>
+                                        <constraint firstItem="wiP-0B-NA5" firstAttribute="top" secondItem="p2M-CC-zAZ" secondAttribute="bottom" constant="24" id="yUy-Ag-MeU"/>
+                                    </constraints>
+                                </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="3dB-WX-hae" secondAttribute="trailing" constant="52" id="JJn-O9-Ywb"/>
+                                <constraint firstItem="3dB-WX-hae" firstAttribute="centerX" secondItem="SqQ-cH-o6w" secondAttribute="centerX" id="Wee-aQ-q8u"/>
+                                <constraint firstItem="3dB-WX-hae" firstAttribute="centerY" secondItem="SqQ-cH-o6w" secondAttribute="centerY" multiplier="0.6" id="Ycv-PN-YmI"/>
+                                <constraint firstItem="3dB-WX-hae" firstAttribute="leading" secondItem="SqQ-cH-o6w" secondAttribute="leading" constant="52" id="fRd-d7-RP5"/>
+                            </constraints>
                         </view>
                         <blurEffect style="light"/>
                     </visualEffectView>
+                    <connections>
+                        <outlet property="addMovieModuleView" destination="3dB-WX-hae" id="GPZ-sN-V0J"/>
+                        <outlet property="cancelButton" destination="wiP-0B-NA5" id="Sxa-Dq-BlW"/>
+                        <outlet property="listPickerView" destination="p2M-CC-zAZ" id="YCC-PI-r61"/>
+                        <outlet property="okButton" destination="eKd-ZM-50Z" id="flg-5B-eox"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxH-I3-i4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4528" y="-325"/>
+            <point key="canvasLocation" x="4527.536231884058" y="-325.44642857142856"/>
         </scene>
         <!--Lists-->
         <scene sceneID="1BM-ic-x2F">

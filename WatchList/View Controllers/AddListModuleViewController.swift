@@ -23,7 +23,6 @@ class AddListModuleViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
-        print("cancel")
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {
