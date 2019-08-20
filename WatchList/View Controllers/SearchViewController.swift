@@ -60,11 +60,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath)
-        cell.textLabel?.text = movieNames[indexPath.row]
-        cell.textLabel?.textColor = UIColor.lightText
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! SearchResultsCell
+        cell.movieNameLabel.text = movieNames[indexPath.row]
+        cell.movieImageView.image = UIImage(named: "Image-1")
         cell.backgroundColor = backgroundColor
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 }
 
