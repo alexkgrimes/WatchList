@@ -22,7 +22,7 @@ class AddListModuleViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var listNameTextField: UITextField!
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func okButtonTapped(_ sender: Any) {
@@ -41,12 +41,11 @@ class AddListModuleViewController: UIViewController, UITextFieldDelegate {
         
         okButton.layer.cornerRadius = 5
         cancelButton.layer.cornerRadius = 5
-        
     }
     
     func createNewList() {
         self.delegate?.textNewListName(listNameTextField.text ?? "new list")
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

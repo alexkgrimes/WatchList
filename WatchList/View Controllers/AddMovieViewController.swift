@@ -14,19 +14,19 @@ class AddMovieViewController: UIViewController {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var okButton: UIButton!
-    
     @IBOutlet weak var listPickerView: UIPickerView!
     
-    var lists = ["To Watch", "Favorites", "Background TV", "For Alex"]
-    var selectedList: String?
+    var lists = Defaults.getLists()
+    var selectedList = ""
+    var movieName = "movie name"
     
     @IBAction func okButtonTapped(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        Defaults.addMovie(named: movieName, toList: selectedList)
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
+
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -41,21 +41,19 @@ class AddMovieViewController: UIViewController {
         
         listPickerView.delegate = self
         listPickerView.dataSource = self
+        
+        var middle: Int
+        if lists.count % 2 == 0 {
+            middle = lists.count / 2 - 1
+        } else {
+            middle = lists.count / 2
+        }
+        listPickerView.selectRow(middle, inComponent: 0, animated: false)
+        selectedList = lists[middle]
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension AddMovieViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

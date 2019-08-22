@@ -9,29 +9,26 @@
 import UIKit
 
 class ListViewController: UIViewController {
-    
-    let backgroundColor = UIColor(red: 32.0 / 255.0, green: 33.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
 
     @IBOutlet weak var listsTableView: UITableView!
     @IBOutlet weak var addListButton: UIButton!
+    @IBOutlet weak var listsEmptyLabel: UILabel!
     
-    var lists = ["To Watch", "Favorites", "Background TV", "For Alex"]
+    var lists = Defaults.getLists()
     var counts = [12, 20, 4, 8]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listsTableView.dataSource = self
-        listsTableView.delegate = self
 
         // Do any additional setup after loading the view.
+        if !lists.isEmpty {
+            listsEmptyLabel.isHidden = true
+        }
+        
+        listsTableView.dataSource = self
+        listsTableView.delegate = self
+        
         colorAddListButton()
-    }
-    
-    func colorAddListButton() {
-        let addListImage = UIImage(named: "add2")
-        let tintedImageAdd = addListImage?.withRenderingMode(.alwaysTemplate)
-        addListButton.setImage(tintedImageAdd, for: .normal)
-        addListButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,6 +44,43 @@ class ListViewController: UIViewController {
         
         super.viewDidAppear(animated)
     }
+    
+    func colorAddListButton() {
+        let addListImage = UIImage(named: "add2")
+        let tintedImageAdd = addListImage?.withRenderingMode(.alwaysTemplate)
+        addListButton.setImage(tintedImageAdd, for: .normal)
+        addListButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
+    }
+    
+    func showDeleteWarning(for indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Delete \(lists[indexPath.row])?", message: "Are you sure you want to delete \(lists[indexPath.row])?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.lists.remove(at: indexPath.row)
+            self.counts.remove(at: indexPath.row)
+            self.listsTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "listDetailSegue" {
+            let listDetailViewController = segue.destination as! ListDetailViewController
+            let selectedRow = sender as? Int
+            let name = lists[selectedRow!]
+            listDetailViewController.listName = name
+        } else if segue.identifier == "addListModuleSegue" {
+            let addListModuleViewController = segue.destination as! AddListModuleViewController
+            addListModuleViewController.delegate = self
+        }
+    }
 }
 
 // MARK: - NewListModuleDelegate
@@ -57,7 +91,8 @@ extension ListViewController: NewListModuleDelegate {
         listsTableView.beginUpdates()
         listsTableView.insertRows(at: [IndexPath(row: lists.count - 1, section: 0)], with: .automatic)
         listsTableView.endUpdates()
-        print(text)
+        
+        Defaults.addList(named: text)
     }
 }
 
@@ -86,39 +121,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             showDeleteWarning(for: indexPath)
-        }
-    }
-    
-    func showDeleteWarning(for indexPath: IndexPath) {
-        //Create the alert controller and actions
-        let alert = UIAlertController(title: "Delete \(lists[indexPath.row])?", message: "Are you sure you want to delete \(lists[indexPath.row])?", preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-            self.lists.remove(at: indexPath.row)
-            self.counts.remove(at: indexPath.row)
-            self.listsTableView.deleteRows(at: [indexPath], with: .fade)
-        }
-        
-        //Add the actions to the alert controller
-        alert.addAction(cancelAction)
-        alert.addAction(deleteAction)
-        
-        //Present the alert controller
-        present(alert, animated: true, completion: nil)
-    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "listDetailSegue" {
-            let listDetailViewController = segue.destination as! ListDetailViewController
-            let selectedRow = sender as? Int
-            let name = lists[selectedRow!]
-            listDetailViewController.listName = name
-        } else if segue.identifier == "addListModuleSegue" {
-            let addListModuleViewController = segue.destination as! AddListModuleViewController
-            addListModuleViewController.delegate = self
         }
     }
 }

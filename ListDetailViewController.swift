@@ -13,21 +13,22 @@ class ListDetailViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var listName = ""
-    let backgroundColor = UIColor(red: 32.0 / 255.0, green: 33.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
-    let movieList = ["Avengers", "Spiderman", "Toy Story 4"]
-    
+    var movieList: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        movieList = Defaults.getMovieList(named: listName)
+        
         listTableView.delegate = self
         listTableView.dataSource = self
         
-        print(listName)
-        self.navigationController?.navigationBar.barTintColor = backgroundColor
+        self.navigationController?.navigationBar.barTintColor = UIColor.darkBackgroundColor()
         self.navigationItem.title = listName
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         UINavigationBar.appearance().titleTextAttributes = textAttributes
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,17 +60,16 @@ extension ListDetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        let movieDetailViewController = storyBoard.instantiateViewController(withIdentifier: "movieDetail") as! MovieDetailViewController
-        movieDetailViewController.sentData = "hello!"
-        
         let transition: CATransition = CATransition()
         transition.duration = 0.4
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.fade
         self.navigationController!.view.layer.add(transition, forKey: nil)
         
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieDetailViewController = storyBoard.instantiateViewController(withIdentifier: "movieDetail") as! MovieDetailViewController
+        
+        movieDetailViewController.movieName = movieList[indexPath.row]
         self.navigationController?.pushViewController(movieDetailViewController, animated: false)
     }
 }

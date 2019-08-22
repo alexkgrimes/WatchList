@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cah-QZ-61r">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="sectionIndexColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -211,7 +211,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="A9H-mT-Gvc"/>
                     <navigationItem key="navigationItem" id="naB-zy-0ed"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Cus-L9-FWZ" id="DNc-Au-KHw"/>
@@ -228,7 +227,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="714.49275362318849" y="349.55357142857139"/>
+            <point key="canvasLocation" x="1510" y="350"/>
         </scene>
         <!--Account-->
         <scene sceneID="26c-Zq-19p">
@@ -320,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdn-0R-aqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394.2028985507247" y="349.55357142857139"/>
+            <point key="canvasLocation" x="3589.8550724637685" y="349.55357142857139"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YTl-rT-gkS">
@@ -542,7 +541,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="vZe-QV-wDC"/>
+                        <segue destination="I5u-qo-RhX" kind="relationship" relationship="viewControllers" id="vZe-QV-wDC"/>
                         <segue destination="t2N-vf-Mb3" kind="relationship" relationship="viewControllers" id="tYB-Fk-gjK"/>
                         <segue destination="geE-T7-09V" kind="relationship" relationship="viewControllers" id="TUu-dy-cp1"/>
                     </connections>
@@ -668,12 +667,20 @@
                                     <outlet property="delegate" destination="rlQ-0R-T4X" id="Cvs-Tw-MMM"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new list to get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0T-de-oaB">
+                                <rect key="frame" x="87" y="332.5" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="z0T-de-oaB" firstAttribute="centerY" secondItem="dDr-11-IXF" secondAttribute="centerY" multiplier="0.8" id="3QP-a1-DtR"/>
                             <constraint firstItem="Q5O-aH-xUj" firstAttribute="top" secondItem="dDr-11-IXF" secondAttribute="top" id="8vl-8j-Iuc"/>
                             <constraint firstItem="3G8-x5-a8v" firstAttribute="top" secondItem="Q5O-aH-xUj" secondAttribute="bottom" constant="8" id="9Lf-NI-4dt"/>
                             <constraint firstItem="dDr-11-IXF" firstAttribute="trailing" secondItem="3G8-x5-a8v" secondAttribute="trailing" id="P4s-AL-0sD"/>
+                            <constraint firstItem="z0T-de-oaB" firstAttribute="centerX" secondItem="dDr-11-IXF" secondAttribute="centerX" id="PoC-j4-eq1"/>
                             <constraint firstItem="Q5O-aH-xUj" firstAttribute="trailing" secondItem="dDr-11-IXF" secondAttribute="trailing" id="SIp-lR-nbJ"/>
                             <constraint firstItem="3G8-x5-a8v" firstAttribute="leading" secondItem="dDr-11-IXF" secondAttribute="leading" id="TX6-Ac-NVq"/>
                             <constraint firstItem="3G8-x5-a8v" firstAttribute="top" secondItem="Q5O-aH-xUj" secondAttribute="bottom" constant="8" id="een-56-obL"/>
@@ -687,6 +694,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addListButton" destination="JDW-Jw-zyP" id="uQg-jf-6cI"/>
+                        <outlet property="listsEmptyLabel" destination="z0T-de-oaB" id="aDr-7F-12y"/>
                         <outlet property="listsTableView" destination="3G8-x5-a8v" id="ZcL-Bc-f9E"/>
                         <segue destination="HDu-9b-Gb2" kind="show" identifier="listDetailSegue" id="x8E-bU-XRv"/>
                     </connections>
@@ -1057,7 +1065,6 @@
                     <connections>
                         <outlet property="addToListsButton" destination="hfe-N2-h8X" id="lZA-fi-xOm"/>
                         <outlet property="descriptionLabel" destination="lCL-xb-a18" id="poy-E6-4ZY"/>
-                        <outlet property="detailsStackView" destination="hXX-Tx-SIQ" id="taw-n9-JVO"/>
                         <outlet property="exitButton" destination="FM4-Xs-zjW" id="igu-Bb-GrS"/>
                         <outlet property="moviePosterImageView" destination="W4X-Fk-R1K" id="dUj-XT-6LZ"/>
                         <outlet property="rateButton" destination="uUx-jP-NMw" id="TUn-wf-4tv"/>
@@ -1075,7 +1082,7 @@
         <!--Add Movie View Controller-->
         <scene sceneID="54a-7x-Bja">
             <objects>
-                <viewController id="QCy-Hr-gdc" customClass="AddMovieViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addMovieViewController" id="QCy-Hr-gdc" customClass="AddMovieViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="QSL-lP-qyi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1084,7 +1091,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dB-WX-hae">
-                                    <rect key="frame" x="52" y="129" width="310" height="280"/>
+                                    <rect key="frame" x="52" y="173.5" width="310" height="280"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select list:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTe-46-aZ8">
                                             <rect key="frame" x="24" y="24" width="278" height="28"/>
@@ -1147,7 +1154,7 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="3dB-WX-hae" secondAttribute="trailing" constant="52" id="JJn-O9-Ywb"/>
                                 <constraint firstItem="3dB-WX-hae" firstAttribute="centerX" secondItem="SqQ-cH-o6w" secondAttribute="centerX" id="Wee-aQ-q8u"/>
-                                <constraint firstItem="3dB-WX-hae" firstAttribute="centerY" secondItem="SqQ-cH-o6w" secondAttribute="centerY" multiplier="0.6" id="Ycv-PN-YmI"/>
+                                <constraint firstItem="3dB-WX-hae" firstAttribute="centerY" secondItem="SqQ-cH-o6w" secondAttribute="centerY" multiplier="0.7" id="Ycv-PN-YmI"/>
                                 <constraint firstItem="3dB-WX-hae" firstAttribute="leading" secondItem="SqQ-cH-o6w" secondAttribute="leading" constant="52" id="fRd-d7-RP5"/>
                             </constraints>
                         </view>
@@ -1182,7 +1189,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJB-BF-sGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.6376811594205" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="1596" y="-320"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DNQ-lL-PH8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="I5u-qo-RhX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="A9H-mT-Gvc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Qu-KO-EWZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="h7x-Nc-ffS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Qx-3v-sTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714.49275362318849" y="349.55357142857139"/>
         </scene>
     </scenes>
     <resources>

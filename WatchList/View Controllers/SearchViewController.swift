@@ -13,8 +13,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let searchController = UISearchController(searchResultsController: nil)
-    var movieNames : [String?] = []
-    let backgroundColor = UIColor(red: 32.0 / 255.0, green: 33.0 / 255.0, blue: 37.0 / 255.0, alpha: 1.0)
+    
+    var movieNames : [String] = ["Avengers", "Iron Man", "Toy Story 4"]
+    var searchBarContents = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +27,24 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self as UISearchResultsUpdating
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.barTintColor = backgroundColor
+        searchController.searchBar.barTintColor = UIColor.darkBackgroundColor()
         
         searchController.searchBar.keyboardAppearance = .dark
         searchController.searchBar.becomeFirstResponder()
         
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        searchController.searchBar.text = searchBarContents
+        
+        super.viewWillAppear(animated)
     }
 }
 
@@ -63,12 +76,29 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCell", for: indexPath) as! SearchResultsCell
         cell.movieNameLabel.text = movieNames[indexPath.row]
         cell.movieImageView.image = UIImage(named: "Image-1")
-        cell.backgroundColor = backgroundColor
+        cell.backgroundColor = UIColor.darkBackgroundColor()
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBarContents = searchController.searchBar.text ?? ""
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieDetailViewController = storyBoard.instantiateViewController(withIdentifier: "movieDetail") as! MovieDetailViewController
+        movieDetailViewController.movieName = movieNames[indexPath.row]
+        
+        let transition: CATransition = CATransition()
+        transition.duration = 0.4
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        
+        searchController.isActive = false
+        self.navigationController?.pushViewController(movieDetailViewController, animated: false)
     }
 }
 

@@ -18,6 +18,7 @@ class AccountViewController: UIViewController {
         appDel.window?.rootViewController = rootController
         Defaults.clearUserData()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

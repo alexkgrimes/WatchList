@@ -20,12 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         handleLoginTapped()
     }
     
-    func handleLoginTapped() {
-        Defaults.setName("alexkgrimes")
-        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
-        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
-    }
-    
     @IBAction func signupButtonTapepd(_ sender: Any) {
         // TODO
     }
@@ -36,6 +30,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.usernameTextField.delegate = self
         self.passwordTextField.delegate = self
+    }
+    
+    func handleLoginTapped() {
+        Defaults.setName("alexkgrimes")
+        let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+        appDelegateTemp?.window?.rootViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

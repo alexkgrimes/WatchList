@@ -13,6 +13,7 @@
 		FA1659AA22F3859800256021 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1659A922F3859800256021 /* MovieDetailViewController.swift */; };
 		FA593C7B230B23C40034861D /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7A230B23C40034861D /* AddMovieViewController.swift */; };
 		FA593C7D230C6FE20034861D /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7C230C6FE20034861D /* SearchResultsCell.swift */; };
+		FA593C7F230F189A0034861D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7E230F189A0034861D /* ThemeManager.swift */; };
 		FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6022E7912500B6A677 /* AppDelegate.swift */; };
 		FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* HomeViewController.swift */; };
 		FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SearchViewController.swift */; };
@@ -47,6 +48,7 @@
 		FA1659A922F3859800256021 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		FA593C7A230B23C40034861D /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		FA593C7C230C6FE20034861D /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
+		FA593C7E230F189A0034861D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FAA1EC5D22E7912500B6A677 /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC6022E7912500B6A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA1EC6222E7912500B6A677 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		FAA1EC5F22E7912500B6A677 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				FA593C7E230F189A0034861D /* ThemeManager.swift */,
 				FA593C7C230C6FE20034861D /* SearchResultsCell.swift */,
 				FAAD074B230494B400CCE0B3 /* Models */,
 				FA1659A722F37E4000256021 /* MovieCell.swift */,
@@ -263,6 +266,7 @@
 				FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */,
 				FAA2F7DD22E8E9FB00109B96 /* AccountViewController.swift in Sources */,
 				FA1659A822F37E4000256021 /* MovieCell.swift in Sources */,
+				FA593C7F230F189A0034861D /* ThemeManager.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
 				FA593C7D230C6FE20034861D /* SearchResultsCell.swift in Sources */,
 				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,

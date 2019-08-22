@@ -14,19 +14,19 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var moviePosterImageView: UIImageView!
-    @IBOutlet weak var detailsStackView: UIStackView!
     
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var whereToWatchButton: UIButton!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var addToListsButton: UIButton!
     @IBOutlet weak var rateButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    
+    var movieName: String = ""
     
     @IBAction func exitButtonTapped(_ sender: Any) {
         let transition: CATransition = CATransition()
@@ -39,8 +39,8 @@ class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func addToListsButtonTapped(_ sender: Any) {
-        // addToListsButton.imageView?.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
-        
+        // TODO
+        // For now uses storyboard to bring up AddMovieViewController
     }
     
     @IBAction func rateButtonTapped(_ sender: Any) {
@@ -68,6 +68,16 @@ class MovieDetailViewController: UIViewController {
         colorButtons()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewDidAppear(animated)
+    }
+    
     func colorButtons() {
         let addToListImage = UIImage(named: "add2")
         let tintedImageAdd = addToListImage?.withRenderingMode(.alwaysTemplate)
@@ -85,16 +95,9 @@ class MovieDetailViewController: UIViewController {
         shareButton.tintColor = #colorLiteral(red: 0.6693737507, green: 0.8444430232, blue: 1, alpha: 1)
     }
  
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewDidAppear(animated)
-    }
-    
     // MARK: - Navigation
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addMovieViewController = segue.destination as! AddMovieViewController
+        addMovieViewController.movieName = movieName
+    }
 }
