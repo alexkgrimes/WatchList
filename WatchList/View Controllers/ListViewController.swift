@@ -58,9 +58,15 @@ class ListViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            Defaults.removeList(at: indexPath.row, forList: self.lists[indexPath.row])
+                
             self.lists.remove(at: indexPath.row)
             self.counts.remove(at: indexPath.row)
             self.listsTableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if self.lists.isEmpty {
+                self.listsEmptyLabel.isHidden = false
+            }
         }
         
         alert.addAction(cancelAction)
@@ -93,6 +99,7 @@ extension ListViewController: NewListModuleDelegate {
         listsTableView.endUpdates()
         
         Defaults.addList(named: text)
+        listsEmptyLabel.isHidden = true
     }
 }
 

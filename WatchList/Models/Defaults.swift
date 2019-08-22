@@ -30,6 +30,13 @@ struct Defaults {
         UserDefaults.standard.set([String](), forKey: listName)
     }
     
+    static func removeList(at index: Int, forList listName: String) {
+        var lists = UserDefaults.standard.array(forKey: listsKey) ?? []
+        lists.remove(at: index)
+        UserDefaults.standard.set(lists, forKey: listsKey)
+        UserDefaults.standard.removeObject(forKey: listName)
+    }
+    
     static func getLists() -> [String] {
         return UserDefaults.standard.array(forKey: listsKey) as? [String] ?? []
     }
@@ -47,6 +54,13 @@ struct Defaults {
     
     static func getMovieList(named listName: String) -> [String] {
         return UserDefaults.standard.array(forKey: listName) as? [String] ?? []
+    }
+    
+    static func removeMovie(at index: Int, forList listName: String) {
+        var list = UserDefaults.standard.array(forKey: listName) ?? []
+        list.remove(at: index)
+        UserDefaults.standard.set(list, forKey: listName)
+        //UserDefaults.standard.removeObject(forKey: listName)
     }
 
     // MARK: - clear

@@ -13,7 +13,7 @@ class ListDetailViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var listName = ""
-    var movieList: [String] = []
+    lazy var movieList: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,27 @@ class ListDetailViewController: UIViewController {
             self.listTableView.deselectRow(at: selectionIndexPath, animated: true)
         }
     }
+    
+    func showDeleteWarning(for indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Delete \(movieList[indexPath.row])?", message: "Are you sure you want to delete \(movieList[indexPath.row])?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            
+            Defaults.removeMovie(at: indexPath.row, forList: self.listName)
+            self.movieList.remove(at: indexPath.row)
+            self.listTableView.deleteRows(at: [indexPath], with: .fade)
+            
+            // TOOD: show label for no movies
+
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - TableViewDelegate
@@ -57,6 +78,12 @@ extension ListDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 132
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showDeleteWarning(for: indexPath)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
