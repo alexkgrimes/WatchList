@@ -1077,7 +1077,62 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vX-wh-RRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3771.0144927536235" y="-322.09821428571428"/>
+            <point key="canvasLocation" x="3774" y="-322"/>
+        </scene>
+        <!--Confirmation View Controller-->
+        <scene sceneID="kT3-3T-AZ6">
+            <objects>
+                <viewController storyboardIdentifier="confirmationViewController" id="jwl-95-ykI" customClass="ConfirmationViewController" customModule="WatchList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VWu-Vg-kKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ufu-Gx-a2x">
+                                <rect key="frame" x="143" y="364.5" width="128" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mTm-dG-vqF">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check1" translatesAutoresizingMaskIntoConstraints="NO" id="idb-ne-APd">
+                                            <rect key="frame" x="20" y="8" width="88" height="88"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50V-f7-HVm">
+                                            <rect key="frame" x="38.5" y="99" width="51" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="50V-f7-HVm" secondAttribute="bottom" constant="8" id="16l-7C-jRG"/>
+                                        <constraint firstAttribute="trailing" secondItem="idb-ne-APd" secondAttribute="trailing" constant="20" id="OlH-CN-rUg"/>
+                                        <constraint firstItem="idb-ne-APd" firstAttribute="leading" secondItem="mTm-dG-vqF" secondAttribute="leading" constant="20" id="Qew-wh-w7B"/>
+                                        <constraint firstAttribute="bottom" secondItem="idb-ne-APd" secondAttribute="bottom" constant="32" id="fyf-b1-fDs"/>
+                                        <constraint firstItem="50V-f7-HVm" firstAttribute="centerX" secondItem="mTm-dG-vqF" secondAttribute="centerX" id="nyD-Al-jnc"/>
+                                        <constraint firstItem="idb-ne-APd" firstAttribute="top" secondItem="mTm-dG-vqF" secondAttribute="top" constant="8" id="rhn-fk-e8E"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="BoF-Im-0H1"/>
+                                    <constraint firstAttribute="height" constant="128" id="G50-Rd-dwS"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ufu-Gx-a2x" firstAttribute="centerY" secondItem="8Az-HH-9zx" secondAttribute="centerY" id="56O-BX-3Ht"/>
+                            <constraint firstItem="Ufu-Gx-a2x" firstAttribute="centerX" secondItem="8Az-HH-9zx" secondAttribute="centerX" id="iUG-FG-0s2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Az-HH-9zx"/>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="Ufu-Gx-a2x" id="0it-gg-pq3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQe-q6-qTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5269.5652173913049" y="-325.44642857142856"/>
         </scene>
         <!--Add Movie View Controller-->
         <scene sceneID="54a-7x-Bja">
@@ -1129,6 +1184,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="okButtonTapped:" destination="QCy-Hr-gdc" eventType="touchUpInside" id="u1x-nf-rRu"/>
+                                                <segue destination="jwl-95-ykI" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Loe-Pe-BS9"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1215,6 +1271,7 @@
         <image name="Image" width="256" height="256"/>
         <image name="account-1" width="25" height="25"/>
         <image name="add2" width="256" height="256"/>
+        <image name="check1" width="512" height="512"/>
         <image name="home2" width="25" height="25"/>
         <image name="lists" width="25" height="25"/>
         <image name="logo" width="256" height="256"/>

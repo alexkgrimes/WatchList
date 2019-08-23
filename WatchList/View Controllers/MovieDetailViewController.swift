@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MovieDetailViewController: UIViewController {
 
     var sentData = ""
@@ -99,5 +100,19 @@ class MovieDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let addMovieViewController = segue.destination as! AddMovieViewController
         addMovieViewController.movieName = movieName
+        addMovieViewController.delegate = self
+    }
+}
+
+extension MovieDetailViewController: ModalHandler {
+    func modalDismissed() {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "confirmationViewController") as? ConfirmationViewController {
+
+            vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            present(vc, animated: true, completion: nil)
+            
+            
+        }
     }
 }

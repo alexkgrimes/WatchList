@@ -14,6 +14,7 @@
 		FA593C7B230B23C40034861D /* AddMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7A230B23C40034861D /* AddMovieViewController.swift */; };
 		FA593C7D230C6FE20034861D /* SearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7C230C6FE20034861D /* SearchResultsCell.swift */; };
 		FA593C7F230F189A0034861D /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C7E230F189A0034861D /* ThemeManager.swift */; };
+		FA593C83231031710034861D /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA593C82231031710034861D /* ConfirmationViewController.swift */; };
 		FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6022E7912500B6A677 /* AppDelegate.swift */; };
 		FAA1EC6322E7912500B6A677 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6222E7912500B6A677 /* HomeViewController.swift */; };
 		FAA1EC6522E7912500B6A677 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA1EC6422E7912500B6A677 /* SearchViewController.swift */; };
@@ -49,6 +50,7 @@
 		FA593C7A230B23C40034861D /* AddMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieViewController.swift; sourceTree = "<group>"; };
 		FA593C7C230C6FE20034861D /* SearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCell.swift; sourceTree = "<group>"; };
 		FA593C7E230F189A0034861D /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		FA593C82231031710034861D /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		FAA1EC5D22E7912500B6A677 /* WatchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA1EC6022E7912500B6A677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA1EC6222E7912500B6A677 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		FAA2F7DE22E8EA0100109B96 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA593C82231031710034861D /* ConfirmationViewController.swift */,
 				FA1659A922F3859800256021 /* MovieDetailViewController.swift */,
 				FA593C7A230B23C40034861D /* AddMovieViewController.swift */,
 				FA1659A322F3359E00256021 /* ListDetailViewController.swift */,
@@ -269,6 +272,7 @@
 				FA593C7F230F189A0034861D /* ThemeManager.swift in Sources */,
 				FAA1EC6122E7912500B6A677 /* AppDelegate.swift in Sources */,
 				FA593C7D230C6FE20034861D /* SearchResultsCell.swift in Sources */,
+				FA593C83231031710034861D /* ConfirmationViewController.swift in Sources */,
 				FAA2F7DB22E8E7D800109B96 /* ListViewController.swift in Sources */,
 				FAC17F682307219500C0775A /* AddListModuleViewController.swift in Sources */,
 				FAA2DCCB22EB9ADC004BE67E /* TabBarViewController.swift in Sources */,

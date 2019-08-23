@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol ModalHandler: class {
+    func modalDismissed()
+}
+
 class AddMovieViewController: UIViewController {
+    weak var delegate: ModalHandler?
 
     @IBOutlet weak var addMovieModuleView: UIView!
     
@@ -22,7 +27,7 @@ class AddMovieViewController: UIViewController {
     
     @IBAction func okButtonTapped(_ sender: Any) {
         Defaults.addMovie(named: movieName, toList: selectedList)
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: delegate?.modalDismissed)
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
